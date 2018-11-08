@@ -9,7 +9,7 @@ const Task = require('../../models/Task');
 // @access Public
 router.get('/', (req, res) => {
   Task.find()
-    .sort({ date: -1 })
+    .sort({ assignedDate: -1 })
     .then(tasks => res.json(tasks));
 });
 
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 // @access Public
 router.post('/', (req, res) => {
   const newTask = new Task({
-    name: req.body.name
+    title: req.body.title
   });
   newTask.save().then(task => res.json(task));
 });
