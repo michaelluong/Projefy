@@ -19,8 +19,7 @@ const TaskSchema = new Schema({
     type: Date
   },
   assignee: {
-    type: String,
-    required: true
+    type: String
   },
   priority: {
     type: Number,
